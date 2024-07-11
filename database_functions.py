@@ -39,7 +39,7 @@ def close_connection(connection):
 
 
 def import_sql_file(sql_file, connection):
-    """Η συνάρτηση διαβάσει το sql αρχείο και εκτελεί τις εντολές του ώστε να δημιουργηθούν τα κατάλληλα tables μέσα στο
+    """Η συνάρτηση διαβάζει το sql αρχείο και εκτελεί τις εντολές του ώστε να δημιουργηθούν τα κατάλληλα tables μέσα στο
     database την πρώτη φορά που θα τρέξει η εφαρμογή"""
     try:
         with open(sql_file, 'r') as f:
@@ -71,9 +71,8 @@ def check_if_database_exists(connection, db_name):
 
 
 def setup_database():
-    """Η συνάρτηση δημιουργεί το database με όνομα 'transactionsdb' που θα περιέχει τα tables transactions και
-    total_amount αν αυτά δεν υπάρχουν ήδη. Εξυπηρετεί στο στήσιμο της βάσης δεδομένων όταν θα τρέξει πρώτη φορα η
-    εφαρμογή"""
+    """Η συνάρτηση δημιουργεί το database με όνομα 'friends_quiz' που θα περιέχει τις ερωτήσεις του quiz. Εξυπηρετεί στο
+     στήσιμο της βάσης δεδομένων όταν θα τρέξει πρώτη φορά η εφαρμογή"""
     db_name = "friends_quiz"
 
     connection = open_connection_without_database()
@@ -102,12 +101,11 @@ def setup_database():
         import_sql_file(".venv/Scripts/friends_quiz.sql", connection)
         close_connection(connection)
     else:
-        print("Η βάση δεδομένων υπάρχει ήδη.")
         close_connection(connection)
 
 
 def query_fetch_all(connection, query):
-    """H συνάρτηση επιστρέφει τα δεδομένα του query που παίρνει σαν όρισμα σε μορφή λεξικού"""
+    """H συνάρτηση επιστρέφει τα δεδομένα του query που παίρνει σαν όρισμα"""
     try:
         cursor = connection.cursor(dictionary=True)
         cursor.execute(query)
