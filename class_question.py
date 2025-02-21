@@ -34,3 +34,4 @@ class Questions_List:
     def get_random_questions(self, number_of_rounds):
         """Η μέθοδος επιλέγει τυχαία ερωτήσεις από τη λίστα questions για όσους γύρους επιλέξει ο χρήστης"""
         return random.sample(self.questions, number_of_rounds)
+

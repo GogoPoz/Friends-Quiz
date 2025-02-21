@@ -59,3 +59,4 @@ else:
           "all about F.R.I.E.N.D.S (just kidding go watch the tv show :D)")
 
 close_connection(connection)
+

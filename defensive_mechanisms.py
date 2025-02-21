@@ -13,3 +13,4 @@ def check_integer(start, finish, user_input):
             # Περίπτωση που δεν εισαχθεί ακέραιος αριθμός
             user_input = input(f"Please enter a number between {start} and {finish}!")
             continue
+
